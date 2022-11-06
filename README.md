@@ -10,6 +10,7 @@
 
 **Instituição:** Universidade de Vila Velha
 
+###### Built in collaboration with Ana Laura Brito (aurahtml).
 ---
 Este primeiro PSet tem como objetivo a prática na criação, resolução e documentação de um banco de dados.
 
