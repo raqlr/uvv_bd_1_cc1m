@@ -11,6 +11,8 @@
 **Instituição:** Universidade de Vila Velha
 
 ---
+Este primeiro PSet tem como objetivo a prática na criação, resolução e documentação de um banco de dados.
+
 ## Programas Utizados para a resolução deste projeto:
 
 > VCS:
@@ -23,4 +25,4 @@
 > MySQL
 > PostgreSQL
 
-Este primeiro PSet tem como objetivo a prática na criação, resolução e documentação de um banco de dados.
+
