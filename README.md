@@ -13,16 +13,15 @@
 ---
 Este primeiro PSet tem como objetivo a prática na criação, resolução e documentação de um banco de dados.
 
-## Programas Utizados para a resolução deste projeto:
+### Programas utizados para a resolução deste projeto:
 
 > VCS:
-> GitHub
-> Git
+> [GitHub](https://github.com/)
+> [Git](https://git-scm.com/)
 
 > SGBD:
-> Oracle
-> MariaDB
-> MySQL
-> PostgreSQL
-
+> [Oracle](https://www.oracle.com/)
+> [MariaDB](https://mariadb.org/)
+> [MySQL](https://www.mysql.com/)
+> [PostgreSQL](https://www.postgresql.org/)
 
