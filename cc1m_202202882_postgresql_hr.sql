@@ -1,3 +1,27 @@
+CREATE USER raquel WITH
+  SUPERUSER
+  CREATEDB
+  CREATEROLE
+  INHERIT
+  REPLICATION
+  BYPASSRLS
+  ENCRYPTED PASSWORD '202202882'
+;
+
+\c uvv raquel;
+
+CREATE SCHEMA IF NOT EXISTS hr AUTHORIZATION raquel;
+
+SET SEARCH_PATH TO hr, raquel, public;
+  
+CREATE DATABASE uvv
+  WITH OWNER = raquel
+  TEMPLATE = template)
+  ENCODING = 'UTF8'
+  LC_COLLATE = 'pt_BR.UTF-8'
+  LC_CTYPE = 'pt_BR.UTF-8'
+  ALLOW_CONNECTIONS = true
+;
 
 CREATE TABLE cargos (
                 id_cargo VARCHAR(10) NOT NULL,
