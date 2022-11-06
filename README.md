@@ -16,12 +16,12 @@ Este primeiro PSet tem como objetivo a prática na criação, resolução e docu
 ### Programas utizados para a resolução deste projeto:
 
 > VCS:
-> [GitHub](https://github.com/)
+> ![GitHub]([https://github.com/](https://logosmarcas.net/wp-content/uploads/2020/12/GitHub-Simbolo.png),
 > [Git](https://git-scm.com/)
 
 > SGBD:
-> [Oracle](https://www.oracle.com/)
-> [MariaDB](https://mariadb.org/)
-> [MySQL](https://www.mysql.com/)
+> [Oracle](https://www.oracle.com/),
+> [MariaDB](https://mariadb.org/),
+> [MySQL](https://www.mysql.com/),
 > [PostgreSQL](https://www.postgresql.org/)
 
