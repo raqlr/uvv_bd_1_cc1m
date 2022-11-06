@@ -1,3 +1,12 @@
+CREATE USER 'raquel'@localhost identified by '202202882';
+
+CREATE DATABASE uvv
+                CHARACTER SET UTF8
+                COLLATE UTF8_general_ci;
+                
+GRANT ALL ON uvv.* TO 'raquel'@localhost;
+
+USE uvv;
 
 CREATE TABLE cargos (
                 id_cargo VARCHAR(10) NOT NULL,
