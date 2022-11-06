@@ -16,7 +16,7 @@ Este primeiro PSet tem como objetivo a prática na criação, resolução e docu
 ### Programas utizados para a resolução deste projeto:
 
 > VCS:
-> ![GitHub]([https://github.com/](https://logosmarcas.net/wp-content/uploads/2020/12/GitHub-Simbolo.png),
+> [GitHub](https://github.com),
 > [Git](https://git-scm.com/)
 
 > SGBD:
