@@ -17,7 +17,7 @@ CREATE TABLE cargos (
                 PRIMARY KEY (id_cargo)
 );
 
-ALTER TABLE cargos COMMENT '
+ALTER TABLE cargos COMMENT 'Tabela que armazena informações sobre salário e código dos cargos na empresa.'
 
 ALTER TABLE cargos MODIFY COLUMN id_cargo VARCHAR(10) COMMENT 'Código de identificação do cargo exercido por determinado empregado.
 Chave estrangeira para a tabela empregados e historico_cargos.';
