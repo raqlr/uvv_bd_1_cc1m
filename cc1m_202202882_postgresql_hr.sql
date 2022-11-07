@@ -31,7 +31,7 @@ CREATE TABLE cargos (
                 CONSTRAINT id_cargo_pk PRIMARY KEY (id_cargo)
 );
 
-COMMENT ON TABLE regioes IS 'Tabela que armazena informações sobre salário e código dos cargos na empresa.';
+COMMENT ON TABLE cargos IS 'Tabela que armazena informações sobre salário e código dos cargos na empresa.';
 COMMENT ON COLUMN cargos.id_cargo IS 'Código de identificação do cargo exercido por determinado empregado.
 Chave estrangeira para a tabela empregados e historico_cargos.';
 COMMENT ON COLUMN cargos.cargo IS 'Nome do cargo de cada funcionário.';
