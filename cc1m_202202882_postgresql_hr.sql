@@ -75,7 +75,7 @@ CREATE TABLE localizacoes (
                 cep VARCHAR(12) NOT NULL,
                 cidade VARCHAR(50),
                 uf VARCHAR(25),
-                id_pais CHAR,
+                id_pais CHAR(2) NOT NULL,
                 CONSTRAINT id_localizacao_pk PRIMARY KEY (id_localizacoes)
 );
 COMMENT ON TABLE localizacoes IS 'Tabela de localizações, contém os endereços de diversos escritórios e facilidades da empresa. Não armazena endereços de clientes.';
