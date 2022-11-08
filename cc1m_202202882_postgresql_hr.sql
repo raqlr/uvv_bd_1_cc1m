@@ -95,7 +95,7 @@ CREATE UNIQUE INDEX localizacoes_idx
 
 CREATE TABLE departamentos (
                 id_departamento INTEGER NOT NULL,
-                nome VARCHAR(10),
+                nome VARCHAR(20),
                 id_localizacoes INTEGER NOT NULL,
                 CONSTRAINT id_departamento_pk PRIMARY KEY (id_departamento)
 );
