@@ -30,7 +30,7 @@ ALTER TABLE cargos MODIFY COLUMN salario_maximo DECIMAL(8, 2) COMMENT 'Maior sal
 
 
 CREATE TABLE regioes (
-                id_regiao INT NOT NULL,
+                id_regiao INT(11) NOT NULL,
                 nome VARCHAR(25) NOT NULL,
                 PRIMARY KEY (id_regiao)
 );
@@ -38,7 +38,7 @@ CREATE TABLE regioes (
 ALTER TABLE regioes COMMENT 'Tabela do tipo 1:N.
 Contém o código de indentificação e nome de cada região cadastrada.';
 
-ALTER TABLE regioes MODIFY COLUMN id_regiao INTEGER COMMENT 'Chave primária da tabela regioes, tipo integer (numero não fracionário).
+ALTER TABLE regioes MODIFY COLUMN id_regiao INTEGER(11) COMMENT 'Chave primária da tabela regioes, tipo integer (numero não fracionário).
 Como toda chave primária, essa coluna não pode ser deixada com o valor nulo.';
 
 ALTER TABLE regioes MODIFY COLUMN nome VARCHAR(25) COMMENT 'O nome das regiões estarão armazenadas nessa coluna.';
@@ -51,7 +51,7 @@ CREATE UNIQUE INDEX regioes_idx
 CREATE TABLE paises (
                 id_pais CHAR(2) NOT NULL,
                 nome VARCHAR(50) NOT NULL,
-                id_regiao INT NOT NULL,
+                id_regiao INT(11) NOT NULL,
                 PRIMARY KEY (id_pais)
 );
 
@@ -62,12 +62,12 @@ Essa coluna tem a utilidade de armazenar o código de cada país onde há uma fi
 
 ALTER TABLE paises MODIFY COLUMN nome VARCHAR(50) COMMENT 'Nome do país onde se encontra filiais, escritórios, ou departamentos da empresa.';
 
-ALTER TABLE paises MODIFY COLUMN id_regiao INTEGER COMMENT 'Chave primária da tabela regioes, tipo integer (numero não fracionário).
+ALTER TABLE paises MODIFY COLUMN id_regiao INTEGER(11) COMMENT 'Chave primária da tabela regioes, tipo integer (numero não fracionário).
 Como toda chave primária, essa coluna não pode ser deixada com o valor nulo.';
 
 
 CREATE TABLE localizacoes (
-                id_localizacoes INT NOT NULL,
+                id_localizacoes INT(11) NOT NULL,
                 endereco VARCHAR(50),
                 cep VARCHAR(12) NOT NULL,
                 cidade VARCHAR(50),
@@ -78,7 +78,7 @@ CREATE TABLE localizacoes (
 
 ALTER TABLE localizacoes COMMENT 'Tabela de localizações, contém os endereços de diversos escritórios e facilidades da empresa. Não armazena endereços de clientes.';
 
-ALTER TABLE localizacoes MODIFY COLUMN id_localizacoes INTEGER COMMENT 'Coluna que contém o código de identificação das localizações inseridas na tabela localizacoes. É uma chave primária e por conta disso, não pode ser nula.
+ALTER TABLE localizacoes MODIFY COLUMN id_localizacoes INTEGER(11) COMMENT 'Coluna que contém o código de identificação das localizações inseridas na tabela localizacoes. É uma chave primária e por conta disso, não pode ser nula.
 Chave estrangeira para a tabela departamentos.';
 
 ALTER TABLE localizacoes MODIFY COLUMN endereco VARCHAR(50) COMMENT 'Localização por endereço de uma filial, escritório, e/ou departamento da empresa.';
@@ -98,40 +98,39 @@ CREATE UNIQUE INDEX localizacoes_idx
  ( cep );
 
 CREATE TABLE departamentos (
-                id_departamento INT NOT NULL,
+                id_departamento INT(11) NOT NULL,
                 nome VARCHAR(10),
-                id_localizacoes INT NOT NULL,
+                id_localizacoes INT(11),
                 PRIMARY KEY (id_departamento)
 );
 
 ALTER TABLE departamentos COMMENT 'Esta tabela reserva informações de identificação (id_departamento, nome, id_localização, id_gerente) dos departamentos da empresa.';
 
-ALTER TABLE departamentos MODIFY COLUMN id_departamento INTEGER COMMENT 'Essa propriedade contém uma chave primária, na qual identifica o departamento cadastrado de acordo com o código de identificação.';
+ALTER TABLE departamentos MODIFY COLUMN id_departamento INTEGER(11) COMMENT 'Essa propriedade contém uma chave primária, na qual identifica o departamento cadastrado de acordo com o código de identificação.';
 
 ALTER TABLE departamentos MODIFY COLUMN nome VARCHAR(10) COMMENT 'Propriedade contendo o nome do departamento da tabela.';
 
-ALTER TABLE departamentos MODIFY COLUMN id_localizacoes INTEGER COMMENT 'Coluna que contém o código de identificação das localizações inseridas na tabela localizacoes. 
+ALTER TABLE departamentos MODIFY COLUMN id_localizacoes INTEGER(11) COMMENT 'Coluna que contém o código de identificação das localizações inseridas na tabela localizacoes. 
 Chave estrangeira para a tabela departamentos.';
 
 
 CREATE TABLE empregados (
-                id_empregado INT NOT NULL,
-                nome VARCHAR(75) NOT NULL,
-                email VARCHAR(35) NOT NULL,
+                id_empregado INT(11) NOT NULL,
+                nome VARCHAR(75),
+                email VARCHAR(35),
                 telefone VARCHAR(20),
-                cpf CHAR(11) NOT NULL,
-                data_contratacao DATE NOT NULL,
+                data_contratacao DATE,
                 id_cargo VARCHAR(10) NOT NULL,
                 salario DECIMAL(8,2) NOT NULL,
                 comissao DECIMAL(4,2),
-                id_departamento INT NOT NULL,
-                id_supervisor INT,
+                id_departamento INT(11) NOT NULL,
+                id_supervisor INT(11),
                 PRIMARY KEY (id_empregado)
 );
 
 ALTER TABLE empregados COMMENT 'Tabela que armazena informações dos funcionários da empresa.';
 
-ALTER TABLE empregados MODIFY COLUMN id_empregado INTEGER COMMENT 'Propriedade com valor único na tabela. A chave primária vai garantir que este valor não seja repetido ou confundido com a identificação de outro funcionário.';
+ALTER TABLE empregados MODIFY COLUMN id_empregado INTEGER(11) COMMENT 'Propriedade com valor único na tabela. A chave primária vai garantir que este valor não seja repetido ou confundido com a identificação de outro funcionário.';
 
 ALTER TABLE empregados MODIFY COLUMN nome VARCHAR(75) COMMENT 'Nome completo do funcionário.';
 
@@ -159,24 +158,24 @@ CREATE UNIQUE INDEX empregados_idx1
  ( email );
 
 CREATE TABLE gerentes (
-                id_gerente INT NOT NULL,
-                id_departamento INT NOT NULL,
+                id_gerente INT(11) NOT NULL,
+                id_departamento INT(11),
                 PRIMARY KEY (id_gerente)
 );
 
 ALTER TABLE gerentes COMMENT 'Tabela de gerente com chave primária estrangeira para a tabela funcionarios.';
 
-ALTER TABLE gerentes MODIFY COLUMN id_gerente INTEGER COMMENT 'Propriedade com valor único na tabela. A chave primária vai garantir que este valor não seja repetido ou confundido com a identificação de outro funcionário.';
+ALTER TABLE gerentes MODIFY COLUMN id_gerente INTEGER(11) COMMENT 'Propriedade com valor único na tabela. A chave primária vai garantir que este valor não seja repetido ou confundido com a identificação de outro funcionário.';
 
-ALTER TABLE gerentes MODIFY COLUMN id_departamento INTEGER COMMENT 'Essa propriedade contém uma chave primária, na qual identifica o departamento cadastrado de acordo com o código de identificação.';
+ALTER TABLE gerentes MODIFY COLUMN id_departamento INTEGER(11) COMMENT 'Essa propriedade contém uma chave primária, na qual identifica o departamento cadastrado de acordo com o código de identificação.';
 
 
 CREATE TABLE historico_cargos (
-                id_empregado INT NOT NULL,
+                id_empregado INT(11) NOT NULL,
                 data_inicial DATE NOT NULL,
                 data_final DATE NOT NULL,
-                id_cargo VARCHAR NOT NULL,
-                id_departamento INT NOT NULL,
+                id_cargo VARCHAR(10) NOT NULL,
+                id_departamento INT(11),
                 PRIMARY KEY (id_empregado, data_inicial)
 );
 
@@ -190,10 +189,10 @@ ALTER TABLE historico_cargos MODIFY COLUMN data_inicial DATE COMMENT 'Indica a d
 ALTER TABLE historico_cargos MODIFY COLUMN data_final DATE COMMENT 'Último dia de um funcionário em um determinado cargo. 
 O valor inserido nesta propriedade deve ser maior do que a data inicial.';
 
-ALTER TABLE historico_cargos MODIFY COLUMN id_cargo VARCHAR COMMENT 'Código de identificação do último cargo exercido pelo empregado.
+ALTER TABLE historico_cargos MODIFY COLUMN id_cargo VARCHAR(10) COMMENT 'Código de identificação do último cargo exercido pelo empregado.
 Chave estrangeira (tabela cargos).';
 
-ALTER TABLE historico_cargos MODIFY COLUMN id_departamento INTEGER COMMENT 'Código que identifica o departamento cadastrado de acordo com o código de identificação.
+ALTER TABLE historico_cargos MODIFY COLUMN id_departamento INTEGER(11) COMMENT 'Código que identifica o departamento cadastrado de acordo com o código de identificação.
 Corresponde ao último departamento onde o empregado trabalhou.';
 
 
