@@ -72,7 +72,7 @@ CREATE TABLE localizacoes (
                 cep VARCHAR(12) NOT NULL,
                 cidade VARCHAR(50),
                 uf VARCHAR(25),
-                id_pais CHAR,
+                id_pais CHAR(2),
                 PRIMARY KEY (id_localizacoes)
 );
 
