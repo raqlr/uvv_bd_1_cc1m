@@ -99,7 +99,7 @@ CREATE UNIQUE INDEX localizacoes_idx
 
 CREATE TABLE departamentos (
                 id_departamento INT(11) NOT NULL,
-                nome VARCHAR(10),
+                nome VARCHAR(20),
                 id_localizacoes INT(11),
                 PRIMARY KEY (id_departamento)
 );
@@ -108,7 +108,7 @@ ALTER TABLE departamentos COMMENT 'Esta tabela reserva informações de identifi
 
 ALTER TABLE departamentos MODIFY COLUMN id_departamento INTEGER(11) COMMENT 'Essa propriedade contém uma chave primária, na qual identifica o departamento cadastrado de acordo com o código de identificação.';
 
-ALTER TABLE departamentos MODIFY COLUMN nome VARCHAR(10) COMMENT 'Propriedade contendo o nome do departamento da tabela.';
+ALTER TABLE departamentos MODIFY COLUMN nome VARCHAR(20) COMMENT 'Propriedade contendo o nome do departamento da tabela.';
 
 ALTER TABLE departamentos MODIFY COLUMN id_localizacoes INTEGER(11) COMMENT 'Coluna que contém o código de identificação das localizações inseridas na tabela localizacoes. 
 Chave estrangeira para a tabela departamentos.';
