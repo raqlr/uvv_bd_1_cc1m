@@ -89,7 +89,7 @@ ALTER TABLE localizacoes MODIFY COLUMN cidade VARCHAR(50) COMMENT 'Cidade onde e
 
 ALTER TABLE localizacoes MODIFY COLUMN uf VARCHAR(25) COMMENT 'Estado (abreviado ou por extenso) onde está localizado o escritório ou outra facilidade da empresa.';
 
-ALTER TABLE localizacoes MODIFY COLUMN id_pais CHAR COMMENT 'Chave estrangeira que referencia a tabela paises. 
+ALTER TABLE localizacoes MODIFY COLUMN id_pais CHAR(2) COMMENT 'Chave estrangeira que referencia a tabela paises. 
 Essa coluna tem a utilidade de armazenar o código de cada país onde há uma filial/escritório da empresa.';
 
 
