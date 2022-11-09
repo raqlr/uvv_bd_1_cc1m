@@ -17,7 +17,7 @@ Este primeiro PSet tem como objetivo a prática na criação, resolução e docu
 ### Programas utizados para a resolução deste projeto:
 
 > VCS:
-> [GitHub](https://github.com),
+> [![GitHub](https://github.com)][],
 > [Git](https://git-scm.com/),
 > [PowerArchitect](https://bestofbi.com/architect-download/)
 
