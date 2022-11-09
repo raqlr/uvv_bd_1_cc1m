@@ -10,7 +10,7 @@ CREATE USER raquel WITH
   ENCRYPTED PASSWORD '202202882'
 ;
 
-/*conexão para a tabela uvv pelo usuário criado anteriormente*/
+/*Comando para logar na tabela uvv usando o usuário criado anteriormente*/
 
 \c uvv raquel;
 
@@ -18,7 +18,7 @@ CREATE USER raquel WITH
 
 CREATE SCHEMA IF NOT EXISTS hr AUTHORIZATION raquel;
 
-/*Setting search path*/
+/*Configurando o search path para hr*/
 
 SET SEARCH_PATH TO hr, raquel, public;
  
@@ -33,7 +33,7 @@ CREATE DATABASE uvv
   ALLOW_CONNECTIONS = true
 ;
 
-/*Criação de tabelas*/
+/*Criação de tabelas, index e comentários*/
 
 CREATE TABLE cargos (
                 id_cargo VARCHAR(10) NOT NULL,
@@ -123,7 +123,6 @@ CREATE TABLE empregados (
                 nome VARCHAR(75) NOT NULL,
                 email VARCHAR(35) NOT NULL,
                 telefone VARCHAR(20),
-                cpf CHAR(11) NOT NULL,
                 data_contratacao DATE NOT NULL,
                 id_cargo VARCHAR(10) NOT NULL,
                 salario NUMERIC(8,2) NOT NULL,
@@ -259,7 +258,7 @@ ON UPDATE NO ACTION
 NOT DEFERRABLE;
 
 
-/*Valores inseridos nas tabelas em ordem*/
+/*Implementação de valores nas tabelas na ordem que foream inseridos no postgresql*/
 
 /*Valores da tabela regioes*/
 
