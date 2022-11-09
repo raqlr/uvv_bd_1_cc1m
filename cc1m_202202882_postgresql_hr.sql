@@ -10,6 +10,17 @@ CREATE USER raquel WITH
   ENCRYPTED PASSWORD '202202882'
 ;
 
+/*Criando banco de dados*/
+
+CREATE DATABASE uvv
+  WITH OWNER = raquel
+  TEMPLATE = template)
+  ENCODING = 'UTF8'
+  LC_COLLATE = 'pt_BR.UTF-8'
+  LC_CTYPE = 'pt_BR.UTF-8'
+  ALLOW_CONNECTIONS = true
+;
+
 /*Comando para logar na tabela uvv usando o usuário criado anteriormente*/
 
 \c uvv raquel;
@@ -21,17 +32,6 @@ CREATE SCHEMA IF NOT EXISTS hr AUTHORIZATION raquel;
 /*Configurando o search path para hr*/
 
 SET SEARCH_PATH TO hr, raquel, public;
- 
-/*Criando banco de dados*/
-
-CREATE DATABASE uvv
-  WITH OWNER = raquel
-  TEMPLATE = template)
-  ENCODING = 'UTF8'
-  LC_COLLATE = 'pt_BR.UTF-8'
-  LC_CTYPE = 'pt_BR.UTF-8'
-  ALLOW_CONNECTIONS = true
-;
 
 /*Criação de tabelas, index e comentários*/
 
