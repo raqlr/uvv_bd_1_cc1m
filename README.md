@@ -18,7 +18,8 @@ Este primeiro PSet tem como objetivo a prática na criação, resolução e docu
 
 > VCS:
 > [GitHub](https://github.com),
-> [Git](https://git-scm.com/)
+> [Git](https://git-scm.com/),
+> [PowerArchitect](https://bestofbi.com/architect-download/)
 
 > SGBD:
 > [Oracle](https://www.oracle.com/),
