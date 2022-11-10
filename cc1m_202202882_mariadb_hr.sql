@@ -122,12 +122,14 @@ CREATE UNIQUE INDEX empregados_idx1
 
 CREATE TABLE gerentes (
                 id_gerente INT(11) NOT NULL,
+                nome VARCHAR(20),
                 id_departamento INT(11),
                 PRIMARY KEY (id_gerente)
 );
 
 ALTER TABLE gerentes COMMENT 'Tabela de gerente com chave primária estrangeira para a tabela funcionarios.';
 ALTER TABLE gerentes MODIFY COLUMN id_gerente INTEGER(11) COMMENT 'Propriedade com valor único na tabela. A chave primária vai garantir que este valor não seja repetido ou confundido com a identificação de outro funcionário.';
+ALTER TABLE gerentes MODIFY COLUMN nome VARCHAR(20) COMMENT 'Nome do gerente.';
 ALTER TABLE gerentes MODIFY COLUMN id_departamento INTEGER(11) COMMENT 'Essa propriedade contém uma chave primária, na qual identifica o departamento cadastrado de acordo com o código de identificação.';
 
 
@@ -442,15 +444,15 @@ INSERT INTO empregados (id_empregado, nome, email, telefone, data_contratacao, i
 
 -- Valores tabela gerentes --
 
-INSERT INTO gerentes (id_gerente, id_departamento) VALUES ('108','100');
-INSERT INTO gerentes (id_gerente, id_departamento) VALUES ('114','30');
-INSERT INTO gerentes (id_gerente, id_departamento) VALUES ('120','50');
-INSERT INTO gerentes (id_gerente, id_departamento) VALUES ('121','50');
-INSERT INTO gerentes (id_gerente, id_departamento) VALUES ('122','50');
-INSERT INTO gerentes (id_gerente, id_departamento) VALUES ('123','50');
-INSERT INTO gerentes (id_gerente, id_departamento) VALUES ('124','50');
-INSERT INTO gerentes (id_gerente, id_departamento) VALUES ('201','20');
-INSERT INTO gerentes (id_gerente, id_departamento) VALUES ('205','110');
+INSERT INTO gerentes (id_gerente, nome, id_departamento) VALUES ('108', 'Nancy Greenberg', '100');
+INSERT INTO gerentes (id_gerente, nome, id_departamento) VALUES ('114', 'Den Raphaely', '30');
+INSERT INTO gerentes (id_gerente, nome, id_departamento) VALUES ('120', 'Matthew Weiss', '50');
+INSERT INTO gerentes (id_gerente, nome, id_departamento) VALUES ('121', 'Adam Fripp', '50');
+INSERT INTO gerentes (id_gerente, nome, id_departamento) VALUES ('122', 'Payam Kaufling', '50');
+INSERT INTO gerentes (id_gerente, nome, id_departamento) VALUES ('123', 'Shanta Vollman', '50');
+INSERT INTO gerentes (id_gerente, nome, id_departamento) VALUES ('124', 'Kevin Mourgos', '50');
+INSERT INTO gerentes (id_gerente, nome, id_departamento) VALUES ('201', 'Michael Hartstein', '20');
+INSERT INTO gerentes (id_gerente, nome, id_departamento) VALUES ('205', 'Shelley Higgins', '110');
 
 -- Valores tabela historico_cargos --
 
