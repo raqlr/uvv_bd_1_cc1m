@@ -143,11 +143,13 @@ CREATE UNIQUE INDEX empregados_idx1
 
 CREATE TABLE gerentes (
                 id_gerente INTEGER NOT NULL,
+                nome VARCHAR(20),
                 id_departamento INTEGER NOT NULL,
                 CONSTRAINT id_empregados_pk_fk PRIMARY KEY (id_gerente)
 );
 COMMENT ON TABLE gerentes IS 'Tabela de gerente com chave primária estrangeira para a tabela funcionarios.';
 COMMENT ON COLUMN gerentes.id_gerente IS 'Propriedade com valor único na tabela. A chave primária vai garantir que este valor não seja repetido ou confundido com a identificação de outro funcionário.';
+COMMENT ON COLUMN gerentes.nome IS 'Nome dos gerentes.'
 COMMENT ON COLUMN gerentes.id_departamento IS 'Essa propriedade contém uma chave primária, na qual identifica o departamento cadastrado de acordo com o código de identificação.';
 
 
@@ -478,15 +480,15 @@ INSERT INTO hr.empregados (id_empregado, nome, email, telefone, data_contratacao
 
 /*Valores da tabela gerentes*/
 
-INSERT INTO hr.gerentes (id_gerente, id_departamento) VALUES ('108','100');
-INSERT INTO hr.gerentes (id_gerente, id_departamento) VALUES ('114','30');
-INSERT INTO hr.gerentes (id_gerente, id_departamento) VALUES ('120','50');
-INSERT INTO hr.gerentes (id_gerente, id_departamento) VALUES ('121','50');
-INSERT INTO hr.gerentes (id_gerente, id_departamento) VALUES ('122','50');
-INSERT INTO hr.gerentes (id_gerente, id_departamento) VALUES ('123','50');
-INSERT INTO hr.gerentes (id_gerente, id_departamento) VALUES ('124','50');
-INSERT INTO hr.gerentes (id_gerente, id_departamento) VALUES ('201','20');
-INSERT INTO hr.gerentes (id_gerente, id_departamento) VALUES ('205','110');
+INSERT INTO gerentes (id_gerente, nome, id_departamento) VALUES ('108','Nancy Greenberg', '100');
+INSERT INTO gerentes (id_gerente, nome, id_departamento) VALUES ('114','Den Raphaely', '30');
+INSERT INTO gerentes (id_gerente, nome, id_departamento) VALUES ('120','Matthew Weiss', '50');
+INSERT INTO gerentes (id_gerente, nome, id_departamento) VALUES ('121','Adam Fripp', '50');
+INSERT INTO gerentes (id_gerente, nome, id_departamento) VALUES ('122','Payam Kaufling', '50');
+INSERT INTO gerentes (id_gerente, nome, id_departamento) VALUES ('123','Shanta Vollman', '50');
+INSERT INTO gerentes (id_gerente, nome, id_departamento) VALUES ('124','Kevin Mourgos', '50');
+INSERT INTO gerentes (id_gerente, nome, id_departamento) VALUES ('201','Michael Hartstein', '20');
+INSERT INTO gerentes (id_gerente, nome, id_departamento) VALUES ('205','Shelley Higgins', '110');
 
 
 /*Valores da tabela gerentes*/
