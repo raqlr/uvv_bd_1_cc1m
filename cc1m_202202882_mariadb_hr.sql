@@ -466,19 +466,3 @@ INSERT INTO historico_cargos (id_empregado, data_inicial, data_final, id_cargo, 
 INSERT INTO historico_cargos (id_empregado, data_inicial, data_final, id_cargo, id_departamento) VALUES (176, '2006-03-24', '2006-12-31', 'SA_REP', 80);
 INSERT INTO historico_cargos (id_empregado, data_inicial, data_final, id_cargo, id_departamento) VALUES (176, '2007-01-01', '2007-12-31', 'SA_MAN', 80);
 INSERT INTO historico_cargos (id_empregado, data_inicial, data_final, id_cargo, id_departamento) VALUES (122, '2007-01-01', '2007-12-31', 'ST_CLERK', 50);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
