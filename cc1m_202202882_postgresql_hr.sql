@@ -14,7 +14,7 @@ CREATE USER raquel WITH
 
 CREATE DATABASE uvv
   WITH OWNER = raquel
-  TEMPLATE = template)
+  TEMPLATE = template0
   ENCODING = 'UTF8'
   LC_COLLATE = 'pt_BR.UTF-8'
   LC_CTYPE = 'pt_BR.UTF-8'
