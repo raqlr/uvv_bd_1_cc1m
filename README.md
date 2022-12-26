@@ -8,7 +8,7 @@
 
 ###### Built in collaboration with Ana Laura Brito (aurahtml), & Anna Maria Lima da Silva (Annmochii).
 
-><em>Este primeiro PSet tem como objetivo a prática em gerar, resolução e documentação de um banco de dados hr do Oracle. Cada documentação presente neste repositório contém informações de um SGBD de uma empresa hipotética.</em>
+><em>Este primeiro PSet tem como objetivo a prática em gerar, solucionar e documentar um projeto de um banco de dados de hr. Cada documentação presente neste repositório contém informações de um SGBD de uma empresa hipotética.</em>
 
 
 ### MariaDB/MySQL:
